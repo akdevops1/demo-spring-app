@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Perform Unit testing') {
             steps {
-                echo 'Building..'
+                  sh """
+                    mvn test
+                """
             }
         }
         stage('Create a Jar') {
