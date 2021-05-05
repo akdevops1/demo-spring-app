@@ -4,7 +4,7 @@ pipeline {
         stage('Perform Unit testing') {
             steps {
                   sh """
-                    mvn test
+                    ${JENKINS_HOME}/maven/maven/bin/mvn clean package
                 """
             }
         }
