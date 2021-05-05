@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Perform Unit testing') {
             steps {
-                  sh """
-                    ${JENKINS_HOME}/maven/maven/bin/mvn clean package
-                """
+                  maven(skipTests: "true")
             }
         }
         stage('Create a Jar') {
