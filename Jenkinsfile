@@ -1,32 +1,10 @@
-pipeline {
-   agent any
-    stages {
-        stage('Perform Unit testing') {
-            steps {
-                  maven(skipTests: "true")
+pipeline{
+    agent any
+    stages{
+        stage{
+            steps{
+                sh "echo mvn clean install"
             }
         }
-        stage('Create a Jar') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Upload to Artifactory') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-      
-      stage('Deploy to Non-prod') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-      stage('QA testing') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-      
     }
 }
